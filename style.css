@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Titre principal */
+.titre-activite {
+  color: #2176ae;
+  margin-left: 1em;
+  font-size: 2em;
+}
+
+/* Bannière */
+header img {
+  width: 96%;
+  margin: 1em auto 1em auto;
+  display: block;
+  border-radius: 8px;
+}
+
+nav {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+nav a {
+  color: #e17055;
+  text-decoration: none;
+  margin: 0 12px;
+  font-size: 1em;
+  position: relative;
+  padding: 0 7px;
+}
+
+nav a::after {
+  content: "|";
+  position: absolute;
+  right: -10px;
+  color: #e17055;
+}
+
+nav a:last-child::after {
+  content: "";
+}
+
+/* Section exercice */
+section {
+  width: 90%;
+  margin: 0 auto;
+}
+
+section h1 {
+  color: #224283;
+}
+
+section p {
+  font-size: 1em;
+  margin: 1em 0;
+}
+
+section strong {
+  color: #068d29;
+}
+
+/* Signature à droite */
+.signature {
+  float: right;
+  font-weight: bold;
+  margin-top: 2em;
+  margin-right: 10px;
+}
+
+/* Footer */
+footer {
+  margin-top: 2em;
+  text-align: center;
+}
+
+footer img {
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 10px;
+}
