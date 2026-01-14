@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Betty Crocker</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER: logo, recherche, boutons utilisateur -->
+<header>
+  <div class="barre-betty">
+
+    <!-- Barre du haut -->
+    <div class="barre-haut">
+
+      <!-- Logo -->
+      <a href="accueil.html">
+        <img src="images/logo.png" alt="logo" class="logo-betty">
+      </a>
+
+      <!-- Recherche -->
+      <div class="recherche-betty">
+        <input type="text" placeholder="Rechercher une recette facile et délicieuse">
+        <button class="btn-recherche" type="button">Rechercher</button>
+      </div>
+
+      <!-- Actions à droite, modifiées par etat-utilisateur.js si connecté -->
+      <div class="actions-droite">
+        <a class="btn-simple" id="bouton-inscription" href="inscription.html">S’inscrire</a>
+        <a class="btn-simple" id="bouton-connexion" href="connexion.html">Connexion</a>
+      </div>
+
+    </div>
+
+    <!-- MENU: dropdown mega-menu géré par scripts/menu.js -->
+    <nav class="menu-betty" id="menu-betty" aria-label="Menu principal">
+
+      <!-- RECETTES -->
+      <div class="menu-item">
+        <button class="menu-btn" type="button" aria-expanded="false">
+          Recettes <span class="fleche">▾</span>
+        </button>
+
+        <!-- Mega menu, affiché quand le menu-item a la classe "ouvert" -->
+        <div class="mega-menu" aria-hidden="true">
+          <div class="mega-inner">
+
+            <div class="col">
+              <h4 class="sans-fleche">Liens rapides</h4>
+              <a href="#">Recettes faciles</a>
+              <a href="#">Recettes préférées des enfants</a>
+              <a href="#">Recettes pour recevoir</a>
+              <a href="#">Recettes sans gluten</a>
+              <a href="#">Recettes mijotées</a>
+              <a href="#">Recettes italiennes</a>
+              <a href="#">Recettes mexicaines</a>
+              <a href="#">Toutes les recettes</a>
+            </div>
+
+            <div class="col">
+              <h4 class="avec-fleche">Déjeuner et brunch</h4>
+              <a href="#">Recettes de muffins</a>
+              <a href="#">Recettes d’œufs au four</a>
+              <a href="#">Recettes de quiches</a>
+              <a href="#">Recettes de gâteaux au café</a>
+
+              <div class="spacer"></div>
+
+              <h4 class="avec-fleche">Dîner</h4>
+              <a href="#">Recettes de soupes</a>
+              <a href="#">Recettes de sandwichs</a>
+              <a href="#">Recettes de salades</a>
+              <a href="#">Recettes de pâtes</a>
+            </div>
+
+            <div class="col">
+              <h4 class="avec-fleche">Souper</h4>
+              <a href="#">Recettes de poulet</a>
+              <a href="#">Recettes de bœuf</a>
+              <a href="#">Recettes de porc</a>
+              <a href="#">Poisson et fruits de mer</a>
+
+              <div class="spacer"></div>
+
+              <h4 class="avec-fleche">Desserts</h4>
+              <a href="#">Recettes de gâteaux</a>
+              <a href="#">Recettes de biscuits</a>
+              <a href="#">Recettes de tartes</a>
+              <a href="#">Recettes de brownies</a>
+              <a href="#">Recettes de carrés</a>
+            </div>
+
+            <div class="col">
+              <h4 class="avec-fleche">Entrées</h4>
+              <a href="#">Recettes de nachos</a>
+              <a href="#">Recettes de trempettes</a>
+              <a href="#">Recettes de boulettes</a>
+              <a href="#">Mini bouchées</a>
+
+              <div class="spacer"></div>
+
+              <h4 class="avec-fleche">Accompagnements</h4>
+              <a href="#">Recettes de légumes</a>
+              <a href="#">Recettes de pommes de terre</a>
+              <a href="#">Légumineuses et céréales</a>
+              <a href="#">Farces et vinaigrettes</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- FÊTES ET CÉLÉBRATIONS -->
+      <div class="menu-item">
+        <button class="menu-btn" type="button" aria-expanded="false">
+          Fêtes et célébrations <span class="fleche">▾</span>
+        </button>
+
+        <div class="mega-menu" aria-hidden="true">
+          <div class="mega-inner">
+            <div class="col">
+              <h4>Occasions</h4>
+              <a href="#">Anniversaires</a>
+              <a href="#">Graduations</a>
+              <a href="#">Mariages</a>
+            </div>
+
+            <div class="col">
+              <h4>Fêtes</h4>
+              <a href="#">Noël</a>
+              <a href="#">Halloween</a>
+              <a href="#">Pâques</a>
+            </div>
+
+            <div class="col"></div>
+            <div class="col"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMMENT FAIRE -->
+      <div class="menu-item">
+        <button class="menu-btn" type="button" aria-expanded="false">
+          Comment faire <span class="fleche">▾</span>
+        </button>
+
+        <div class="mega-menu" aria-hidden="true">
+          <div class="mega-inner">
+            <div class="col">
+              <h4>Guides pratiques</h4>
+              <a href="#">Guide du glaçage</a>
+              <a href="#">Pâte à tarte</a>
+              <a href="#">Préparer des cupcakes</a>
+            </div>
+
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUITS -->
+      <div class="menu-item">
+        <button class="menu-btn" type="button" aria-expanded="false">
+          Produits <span class="fleche">▾</span>
+        </button>
+
+        <div class="mega-menu" aria-hidden="true">
+          <div class="mega-inner">
+            <div class="col">
+              <h4>Produits</h4>
+              <a href="#">Préparations à gâteau</a>
+              <a href="#">Mélanges à brownies</a>
+              <a href="#">Glaçages</a>
+            </div>
+
+            <div class="col">
+              <h4>Autres</h4>
+              <a href="#">Mélanges à muffins</a>
+              <a href="#">Mélanges Bisquick</a>
+              <a href="#">Décorations</a>
+            </div>
+
+            <div class="col">
+              <h4>Ingrédients</h4>
+              <a href="#">Farines</a>
+              <a href="#">Sucre</a>
+              <a href="#">Pépites</a>
+            </div>
+
+            <div class="col">
+              <h4>Catalogue</h4>
+              <a href="#">Voir tous les produits</a>
+              <a href="#">Promotions</a>
+              <a href="#">Nouveautés</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Liens simples -->
+      <a class="menu-lien" href="#">Idées créatives</a>
+      <a class="menu-lien" href="#">24 jours de biscuits</a>
+      <a class="menu-lien" href="boutique.html" target="_blank" rel="noopener">Boutique</a>
+
+    </nav>
+  </div>
+</header>
+
+<!-- PROMO 1 -->
+<div class="promotion-1">
+  <img src="images/lemon.png" alt="Lemon Squares">
+  <div class="promo-contenu">
+    <h1>Carrés au citron</h1>
+    <button class="btn-promo" type="button">Cuire une petite quantité</button>
+  </div>
+</div>
+
+<!-- SECTION: recettes verticales -->
+<div class="recette-vertical">
+  <h1>Pâtisseries meilleures pour la santé</h1>
+
+  <div class="grille-recettes">
+    <div class="carte-recette">
+      <img src="images/Bagels.png" alt="Cottage Cheese Protein Bagels">
+      <h3>Cottage Cheese Protein Bagels</h3>
+      <div class="etoiles">★★★★★ <span>(4)</span></div>
+      <div class="save">♡ Save</div>
+    </div>
+
+    <div class="carte-recette">
+      <img src="images/Gâteau.png" alt="Olive Oil Cake">
+      <h3>Olive Oil Cake</h3>
+      <div class="etoiles">★★★★★ <span>(1)</span></div>
+      <div class="save">♡ Save</div>
+    </div>
+
+    <div class="carte-recette">
+      <img src="images/Pain.png" alt="Zucchini Bread">
+      <h3>Zucchini Bread</h3>
+      <div class="etoiles">★★★★★ <span>(230)</span></div>
+      <div class="save">♡ Save</div>
+    </div>
+
+    <div class="carte-recette">
+      <img src="images/Crêpes.png" alt="Protein Pancakes">
+      <h3>Bisquick Protein Pancakes</h3>
+      <div class="etoiles">☆☆☆☆☆ <span>(0)</span></div>
+      <div class="save">♡ Save</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDER: contrôlé par scripts/slide-script.js -->
+<div class="recette-horizontal">
+  <h2 class="titre-horizontal">Célébrez le Mois mondial de la pâtisserie</h2>
+
+  <div class="slider">
+    <button class="btn prev" type="button">‹</button>
+
+    <!-- Zone scroll horizontale -->
+    <div class="rangee-recettes">
+      <div class="carte-h">
+        <img src="images/Biscuits.png" alt="Salted Caramel Pretzel Crunch Cookies">
+        <a class="nom-recette" href="#">Salted Caramel Pretzel Crunch Cookies</a>
+        <div class="etoiles">☆☆☆☆☆ <span>(0)</span></div>
+        <div class="save">♡ Save</div>
+      </div>
+
+      <div class="carte-h">
+        <img src="images/Fraisier.png" alt="Strawberry Shortcake">
+        <a class="nom-recette" href="#">Strawberry Shortcake</a>
+        <div class="etoiles">★★★★★ <span>(726)</span></div>
+        <div class="save">♡ Save</div>
+      </div>
+
+      <div class="carte-h">
+        <img src="images/Brownie.png" alt="OREO Cookies Brownie Lush">
+        <a class="nom-recette" href="#">OREO Cookies Brownie Lush</a>
+        <div class="etoiles">★★★★★ <span>(120)</span></div>
+        <div class="save">♡ Save</div>
+      </div>
+
+      <div class="carte-h">
+        <img src="images/lemon.png" alt="Lemon Squares">
+        <a class="nom-recette" href="#">Lemon Squares</a>
+        <div class="etoiles">★★★★★ <span>(435)</span></div>
+        <div class="save">♡ Save</div>
+      </div>
+
+      <div class="carte-h">
+        <img src="images/Biscuits maison.png" alt="Chocolate Chunk Cookies">
+        <a class="nom-recette" href="#">Chocolate Chunk Cookies</a>
+        <div class="etoiles">★★★★★ <span>(312)</span></div>
+        <div class="save">♡ Save</div>
+      </div>
+
+      <div class="carte-h">
+        <img src="images/Gâteau l_ananas.png" alt="Vanilla Layer Cake">
+        <a class="nom-recette" href="#">Vanilla Layer Cake</a>
+        <div class="etoiles">★★★★★ <span>(198)</span></div>
+        <div class="save">♡ Save</div>
+      </div>
+
+      <div class="carte-h">
+        <img src="images/Brownies cheesecake.png" alt="Raspberry Crumb Bars">
+        <a class="nom-recette" href="#">Raspberry Crumb Bars</a>
+        <div class="etoiles">★★★★★ <span>(267)</span></div>
+        <div class="save">♡ Save</div>
+      </div>
+
+      <div class="carte-h">
+        <img src="images/Biscuits d_anniversaire.png" alt="Blueberry Muffins">
+        <a class="nom-recette" href="#">Blueberry Muffins</a>
+        <div class="etoiles">★★★★★ <span>(401)</span></div>
+        <div class="save">♡ Save</div>
+      </div>
+    </div>
+
+    <button class="btn next" type="button">›</button>
+  </div>
+</div>
+
+<!-- SAVEURS DE SAISON -->
+<div class="saveur-saison">
+  <h2>Flavors of the Season</h2>
+
+  <div class="liste-saveurs">
+    <div class="saveur">
+      <div class="icone">🍎</div>
+      <a href="#">Pomme</a>
+    </div>
+
+    <div class="saveur">
+      <div class="icone">🍥</div>
+      <a href="#">Chocolat blanc</a>
+    </div>
+
+    <div class="saveur">
+      <div class="icone">🍁</div>
+      <a href="#">Érable</a>
+    </div>
+
+    <div class="saveur">
+      <div class="icone">🫐</div>
+      <a href="#">Canneberge</a>
+    </div>
+
+    <div class="saveur">
+      <div class="icone">🌿</div>
+      <a href="#">Cannelle</a>
+    </div>
+
+    <div class="saveur">
+      <div class="icone">🍋</div>
+      <a href="#">Citron</a>
+    </div>
+
+    <div class="saveur">
+      <div class="icone">☕</div>
+      <a href="#">Chocolat chaud</a>
+    </div>
+  </div>
+</div>
+
+<!-- PROMO 2 -->
+<div class="promotion-2">
+  <div class="promo-image">
+    <img src="images/Brownies 2.jpg" alt="Protein Brownies">
+  </div>
+
+  <div class="promo-texte">
+    <h2>Brownies protéinés</h2>
+    <p>
+      2026, c'est l'année du bien-être. Ajoutez un peu de protéines à votre dessert préféré pour une expérience gourmande inoubliable.
+    </p>
+    <button class="btn-promo" type="button">Pack In the Protein</button>
+  </div>
+</div>
+
+<!-- TITRE SECTION SAISON -->
+<div class="recette-vertical">
+  <h1>Recettes de saison</h1>
+</div>
+
+<!-- GRILLE: recettes de saison -->
+<div class="recette-grid">
+  <div class="carte-recette">
+    <img src="images/MugCake.png" alt="Triple Chocolate Mug Cake">
+    <a class="nom-recette" href="#">Mug Cake aux trois chocolats</a>
+    <div class="rating">
+      <span class="stars">★★★★★</span>
+      <span class="count">(28)</span>
+    </div>
+    <div class="save">
+      <span class="coeur">♡</span>
+      <span>Save</span>
+    </div>
+  </div>
+
+  <div class="carte-recette">
+    <img src="images/Muffinsbanane.png" alt="Banana-Cinnamon Muffins">
+    <a class="nom-recette" href="#">Muffins banane-cannelle</a>
+    <div class="rating">
+      <span class="stars">★★★★★</span>
+      <span class="count">(254)</span>
+    </div>
+    <div class="save">
+      <span class="coeur">♡</span>
+      <span>Save</span>
+    </div>
+  </div>
+
+  <div class="carte-recette">
+    <img src="images/Gâteaurenversé.png" alt="3-Ingredient Chocolate Cherry Dump Cake">
+    <a class="nom-recette" href="#">Gâteau renversé au chocolat et aux cerises (3 ingrédients)</a>
+    <div class="rating">
+      <span class="stars">★★★★★</span>
+      <span class="count">(327)</span>
+    </div>
+    <div class="save">
+      <span class="coeur">♡</span>
+      <span>Save</span>
+    </div>
+  </div>
+
+  <div class="carte-recette">
+    <img src="images/Biscuitssanspépites.png" alt="Chocolate Chipless Cookies">
+    <a class="nom-recette" href="#">Biscuits sans pépites de chocolat</a>
+    <div class="rating">
+      <span class="stars empty">☆☆☆☆☆</span>
+      <span class="count">(0)</span>
+    </div>
+    <div class="save">
+      <span class="coeur">♡</span>
+      <span>Save</span>
+    </div>
+  </div>
+</div>
+
+<!-- TITRE SECTION AGRUMES -->
+<h1 class="titre-section">Les meilleurs desserts aux agrumes pour l'hiver</h1>
+
+<!-- GRILLE: desserts aux agrumes -->
+<div class="recette-grid">
+  <div class="carte-recette">
+    <img src="images/Gâteaucreme.png" alt="Lemon Velvet Cream Cake">
+    <a class="nom-recette" href="#">Gâteau à la crème velouté au citron</a>
+    <div class="rating">
+      <span class="stars">★★★★★</span>
+      <span class="count">(135)</span>
+    </div>
+    <div class="save">
+      <span class="coeur">♡</span> Save
+    </div>
+  </div>
+
+  <div class="carte-recette">
+    <img src="images/Gâteaud_orange.png" alt="Orange Juice Cake">
+    <a class="nom-recette" href="#">Gâteau au jus d'orange</a>
+    <div class="rating">
+      <span class="stars">★★★★★</span>
+      <span class="count">(14)</span>
+    </div>
+    <div class="save">
+      <span class="coeur">♡</span> Save
+    </div>
+  </div>
+
+  <div class="carte-recette">
+    <img src="images/Tarte au citron.png" alt="Easy Key Lime Pie">
+    <a class="nom-recette" href="#">Tarte au citron vert facile</a>
+    <div class="rating">
+      <span class="stars">★★★★★</span>
+      <span class="count">(167)</span>
+    </div>
+    <div class="save">
+      <span class="coeur">♡</span> Save
+    </div>
+  </div>
+
+  <div class="carte-recette">
+    <img src="images/Bouchées.png" alt="Lemon Cheesecake Cookie Bites">
+    <a class="nom-recette" href="#">Bouchées de biscuits au cheesecake citron</a>
+    <div class="rating">
+      <span class="stars">★★★★★</span>
+      <span class="count">(5)</span>
+    </div>
+    <div class="save">
+      <span class="coeur">♡</span> Save
+    </div>
+  </div>
+</div>
+
+<!-- PUB HISTOIRE -->
+<div class="publicite-3">
+  <div class="promo-contenu1">
+    <div class="promo-images">
+      <img src="images/HistoryofBetty.png" alt="Betty Crocker Then">
+    </div>
+
+    <div class="promo-texte">
+      <h2>Betty Crocker: Hier et aujourd'hui</h2>
+      <p>
+        Depuis 1921, la « Première Dame de la gastronomie américaine » aide les cuisiniers et pâtissiers amateurs
+        à créer des recettes délicieuses et fiables pour toutes les occasions.
+      </p>
+      <button class="btn-promo" type="button">Découvrez l’histoire de Betty</button>
+    </div>
+  </div>
+</div>
+
+<!-- INSCRIPTION INFOLETTRE 1 -->
+<div class="rejoindre">
+  <div class="rejoindre-contenu">
+
+    <div class="rejoindre-texte">
+      <h2>Du bonheur en pâtisserie, une recette à la fois !</h2>
+      <p>
+        Accédez à des milliers de recettes testées et approuvées,
+        idéales pour les repas de tous les jours et les occasions spéciales.
+        Préparées avec amour, de nos cuisines aux vôtres.
+      </p>
+    </div>
+
+    <div class="rejoindre-form">
+      <!-- Important: id différent pour éviter doublon -->
+      <label for="email-1">Adresse courriel *</label>
+      <input type="email" id="email-1" placeholder="Saisissez votre adresse e-mail">
+
+      <p class="conditions">
+        En vous inscrivant, vous acceptez notre
+        <a href="#">politique de confidentialité</a> et consentez à ce que vos
+        informations soient utilisées par l’ensemble de nos marques.
+      </p>
+
+      <button class="btn-simple" type="button">Inscrivez-moi aux courriels</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- Zone vidéo (vide pour l’instant) -->
+<div class="recette-video"></div>
+
+<!-- INSCRIPTION INFOLETTRE 2 -->
+<div class="rejoindre-2">
+  <div class="rejoindre-contenu">
+
+    <div class="rejoindre-texte">
+      <h2>Préparez quelque chose<br>de spécial</h2>
+
+      <p>
+        Rien ne réchauffe une pièce comme un four chaud.
+        Préparez un dessert spécial pour un anniversaire, une fête ou un goûter grâce à nos recettes de pâtisserie envoyées directement dans votre boîte mail.
+      </p>
+
+      <form class="rejoindre-form">
+        <!-- Important: id différent pour éviter doublon -->
+        <label for="email-2">Votre adresse e-mail *</label>
+        <input type="email" id="email-2">
+
+        <p class="rejoindre-conditions">
+          En vous inscrivant, vous acceptez notre
+          <a href="#">politique de confidentialité</a>
+          et consentez à ce que vos informations soient utilisées par
+          <a href="#">l’ensemble de nos marques</a>.
+        </p>
+
+        <button type="submit" class="btn-simple">Inscrivez-moi aux courriels</button>
+
+        <!-- Message d'erreur à afficher si validation JS plus tard -->
+        <p class="rejoindre-erreur">
+          S’il vous plaît, mettez une adresse email valide.
+        </p>
+      </form>
+    </div>
+
+    <div class="rejoindre-image">
+      <img src="images/cookies.png" alt="Cookies">
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer-betty">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <img src="images/logo.png" alt="Betty">
+    </div>
+
+    <div class="footer-social">
+      <a href="https://www.facebook.com/bettycrocker" target="_blank" rel="noopener" aria-label="Facebook">
+        <img src="images/facebook.png" alt="Facebook">
+      </a>
+
+      <a href="https://www.instagram.com/bettycrocker/" target="_blank" rel="noopener" aria-label="Instagram">
+        <img src="images/instagram.png" alt="Instagram">
+      </a>
+
+      <a href="https://www.pinterest.com/bettycrocker/" target="_blank" rel="noopener" aria-label="Pinterest">
+        <img src="images/pinterest.png" alt="Pinterest">
+      </a>
+
+      <a href="https://www.youtube.com/user/BettyCrockerTV" target="_blank" rel="noopener" aria-label="YouTube">
+        <img src="images/youtube.png" alt="YouTube">
+      </a>
+
+      <a href="https://www.tiktok.com/@bettycrocker" target="_blank" rel="noopener" aria-label="TikTok">
+        <img src="images/tiktok.png" alt="TikTok">
+      </a>
+    </div>
+  </div>
+
+  <hr class="footer-sep">
+
+  <div class="footer-cols">
+    <div class="footer-col">
+      <h3>Explore Betty</h3>
+      <a href="#">Contact Betty Crocker</a>
+      <a href="#">About Betty Crocker</a>
+      <a href="#">Product Locator</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Policies</h3>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Legal Terms</a>
+      <a href="#">Cookie Policy</a>
+      <a href="#">Community Guidelines</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Your Information</h3>
+      <a href="#">Customize Cookie Settings</a>
+      <a href="#">Your Privacy Choices</a>
+      <a href="#">AdChoices</a>
+    </div>
+
+    <div class="footer-right">
+      <p>©2026 Rivaldo</p>
+    </div>
+  </div>
+</footer>
+
+<!-- JS: slider, supabase état utilisateur, menu -->
+<script src="scripts/slide-script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="scripts/etat-utilisateur.js"></script>
+<script src="scripts/menu.js"></script>
+
+</body>
+</html>

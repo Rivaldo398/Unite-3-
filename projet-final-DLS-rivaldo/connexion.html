@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Titre de la page -->
+  <title>Connexion, Betty Crocker</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Icônes Google -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<body>
+
+<!-- En-tête du site -->
+<header>
+  <div class="barre-betty">
+    <div class="barre-haut">
+
+      <!-- Logo qui retourne à l’accueil -->
+      <a href="accueil.html">
+        <img src="images/logo.png" alt="logo" class="logo-betty">
+      </a>
+
+      <!-- Barre de recherche -->
+      <div class="recherche-betty">
+        <input type="text" placeholder="Rechercher une recette facile et délicieuse" />
+        <button class="btn-recherche" type="button">Rechercher</button>
+      </div>
+
+      <!-- Boutons inscription et connexion -->
+      <div class="actions-droite">
+        <a class="btn-simple" id="bouton-inscription" href="inscription.html">S’inscrire</a>
+        <a class="btn-simple" id="bouton-connexion" href="connexion.html">Connexion</a>
+      </div>
+    </div>
+
+    <!-- Menu principal -->
+    <nav class="menu-betty" aria-label="Menu principal">
+
+      <!-- Menu recettes avec sous-menu -->
+      <div class="menu-item">
+        <button class="menu-btn" type="button" aria-expanded="false">
+          Recettes <span class="fleche">▾</span>
+        </button>
+
+        <!-- Sous-menu recettes -->
+        <div class="mega-menu">
+          <div class="mega-inner">
+
+            <!-- Colonne liens rapides -->
+            <div class="col">
+              <h4>Liens rapides</h4>
+              <a href="#">Recettes faciles</a>
+              <a href="#">Recettes enfants</a>
+              <a href="#">Toutes les recettes</a>
+            </div>
+
+            <!-- Autres catégories -->
+            <div class="col">
+              <h4>Déjeuner</h4>
+              <a href="#">Muffins</a>
+              <a href="#">Œufs</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Liens simples -->
+      <a class="menu-lien" href="#">Idées créatives</a>
+      <a class="menu-lien" href="#">24 jours de biscuits</a>
+      <a class="menu-lien" href="boutique.html">Boutique</a>
+
+    </nav>
+  </div>
+</header>
+
+<!-- Zone principale de connexion -->
+<main class="zone-auth">
+
+  <!-- Carte centrale -->
+  <section class="carte-auth">
+
+    <!-- Colonne gauche, information -->
+    <div class="auth-gauche">
+      <h1 class="auth-titre">Rejoignez la communauté Betty</h1>
+      <p class="auth-texte">
+        Accédez à des recettes, des idées et des offres.
+      </p>
+
+      <!-- Liste avantages -->
+      <ul class="auth-liste">
+        <li>Boîte de recettes</li>
+        <li>Offres exclusives</li>
+        <li>Accès anticipé</li>
+      </ul>
+    </div>
+
+    <!-- Colonne droite, formulaire -->
+    <div class="auth-droite">
+      <h2 class="auth-titre-form">Connexion</h2>
+
+      <!-- Boutons connexion sociale -->
+      <div class="auth-social">
+        <button class="auth-social-btn" type="button">
+          Facebook
+        </button>
+        <button class="auth-social-btn" type="button">
+          Google
+        </button>
+      </div>
+
+      <!-- Séparateur -->
+      <div class="auth-separateur"></div>
+
+      <!-- Formulaire de connexion -->
+      <form id="formulaire-connexion" class="auth-form">
+
+        <!-- Champ courriel -->
+        <label for="champ-courriel-connexion">Adresse courriel</label>
+        <input id="champ-courriel-connexion" type="email" required />
+
+        <!-- Champ mot de passe -->
+        <label for="champ-motdepasse-connexion">Mot de passe</label>
+        <input id="champ-motdepasse-connexion" type="password" required />
+
+        <!-- Options -->
+        <div class="auth-ligne">
+          <label>
+            <input type="checkbox" checked />
+            Se souvenir de moi
+          </label>
+
+          <a href="#">Mot de passe oublié</a>
+        </div>
+
+        <!-- Bouton envoyer -->
+        <button class="auth-bouton" type="submit">
+          Se connecter
+        </button>
+
+        <!-- Message d’erreur ou succès -->
+        <p id="message-connexion"></p>
+
+        <!-- Lien création de compte -->
+        <p>
+          Pas de compte
+          <a href="inscription.html">Créer un compte</a>
+        </p>
+
+      </form>
+    </div>
+
+  </section>
+</main>
+
+<!-- Pied de page -->
+<footer class="footer-betty">
+
+  <!-- Logo et réseaux sociaux -->
+  <div class="footer-top">
+    <div class="footer-logo">
+      <img src="images/logo.png" alt="logo">
+    </div>
+
+    <div class="footer-social">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+      <a href="#">TikTok</a>
+    </div>
+  </div>
+
+  <!-- Liens bas de page -->
+  <div class="footer-cols">
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <a href="#">Contact</a>
+      <a href="#">À propos</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Politiques</h3>
+      <a href="#">Confidentialité</a>
+      <a href="#">Conditions</a>
+    </div>
+
+    <div class="footer-right">
+      <p>©2026 General Mills</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script type="module" src="scripts/connexion.js"></script>
+<script src="scripts/menu.js"></script>
+
+</body>
+</html>

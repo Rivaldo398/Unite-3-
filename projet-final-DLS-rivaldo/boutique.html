@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+  <!-- Barre du haut -->
+  <header class="topbar">
+
+    <!-- Zone logo, recherche, boutons -->
+    <div class="barre-betty">
+      <div class="barre-haut">
+
+        <!-- Logo qui ramène à l’accueil -->
+        <a href="accueil.html">
+          <img src="images/logo.png" alt="logo" class="logo-betty">
+        </a>
+
+        <!-- Recherche -->
+        <div class="recherche-betty">
+          <input type="text" placeholder="Rechercher une recette facile et délicieuse">
+          <button class="btn-recherche">Rechercher</button>
+        </div>
+
+        <!-- Liens inscription et connexion -->
+        <div class="actions-droite">
+          <a class="btn-simple" id="bouton-inscription" href="inscription.html">S’inscrire</a>
+          <a class="btn-simple" id="bouton-connexion" href="connexion.html">Connexion</a>
+        </div>
+
+      </div>
+
+      <!-- Bouton pour ouvrir le panier -->
+      <div class="actions">
+        <button id="openCartBtn" class="cart-btn" type="button">
+          Panier <span id="cartCount" class="badge">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu principal -->
+    <nav class="menu-betty" id="menu-betty">
+
+      <!-- Catégorie menu avec sous-menu -->
+      <div class="menu-item">
+        <button class="menu-btn" type="button" aria-expanded="false">
+          Recettes <span class="fleche">▾</span>
+        </button>
+
+        <!-- Sous-menu -->
+        <div class="mega-menu" aria-hidden="true">
+          <div class="mega-inner">
+            <div class="col">
+              <h4>Liens rapides</h4>
+              <a href="#">Recettes faciles</a>
+              <a href="#">Recettes préférées des enfants</a>
+              <a href="#">Parcourir toutes les recettes</a>
+            </div>
+
+            <div class="col">
+              <h4>Déjeuner et brunch</h4>
+              <a href="#">Recettes de muffins</a>
+              <a href="#">Recettes d’œufs au four</a>
+              <a href="#">Recettes de gâteaux au café</a>
+            </div>
+
+            <div class="col">
+              <h4>Desserts</h4>
+              <a href="#">Recettes de gâteaux</a>
+              <a href="#">Recettes de biscuits</a>
+              <a href="#">Recettes de brownies</a>
+            </div>
+
+            <div class="col">
+              <h4>Soupers</h4>
+              <a href="#">Recettes de poulet</a>
+              <a href="#">Recettes de bœuf</a>
+              <a href="#">Recettes de porc</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Autres catégories -->
+      <div class="menu-item">
+        <button class="menu-btn" type="button" aria-expanded="false">
+          Fêtes et célébrations <span class="fleche">▾</span>
+        </button>
+
+        <div class="mega-menu" aria-hidden="true">
+          <div class="mega-inner">
+            <div class="col">
+              <h4>Occasions</h4>
+              <a href="#">Anniversaires</a>
+              <a href="#">Graduations</a>
+              <a href="#">Mariages</a>
+            </div>
+
+            <div class="col">
+              <h4>Fêtes</h4>
+              <a href="#">Noël</a>
+              <a href="#">Halloween</a>
+              <a href="#">Pâques</a>
+            </div>
+
+            <div class="col"></div>
+            <div class="col"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <button class="menu-btn" type="button" aria-expanded="false">
+          Comment faire <span class="fleche">▾</span>
+        </button>
+
+        <div class="mega-menu" aria-hidden="true">
+          <div class="mega-inner">
+            <div class="col">
+              <h4>Guides pratiques</h4>
+              <a href="#">Guide du glaçage</a>
+              <a href="#">Pâte à tarte</a>
+              <a href="#">Préparer des cupcakes</a>
+            </div>
+
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <button class="menu-btn" type="button" aria-expanded="false">
+          Produits <span class="fleche">▾</span>
+        </button>
+
+        <div class="mega-menu" aria-hidden="true">
+          <div class="mega-inner">
+            <div class="col">
+              <h4>Produits</h4>
+              <a href="#">Préparations à gâteau</a>
+              <a href="#">Mélanges à brownies</a>
+              <a href="#">Glaçages</a>
+            </div>
+
+            <div class="col">
+              <h4>Autres</h4>
+              <a href="#">Mélanges à muffins</a>
+              <a href="#">Mélanges Bisquick</a>
+              <a href="#">Décorations</a>
+            </div>
+
+            <div class="col">
+              <h4>Ingrédients</h4>
+              <a href="#">Farines</a>
+              <a href="#">Sucre</a>
+              <a href="#">Pépites</a>
+            </div>
+
+            <div class="col">
+              <h4>Catalogue</h4>
+              <a href="#">Voir tous les produits</a>
+              <a href="#">Promotions</a>
+              <a href="#">Nouveautés</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Liens simples du menu -->
+      <a class="menu-lien" href="#">Idées créatives</a>
+      <a class="menu-lien" href="#">24 jours de biscuits</a>
+      <a class="menu-lien" href="boutique.html" target="_blank" rel="noopener">Boutique</a>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Section d’introduction de la boutique -->
+    <section class="hero">
+      <div class="hero-left">
+        <!-- Zone image ou décor, selon le CSS -->
+      </div>
+
+      <div class="hero-right">
+        <h1>SuperMoist Supply Co.</h1>
+        <p>Découvrez des articles inspirés de la marque</p>
+
+        <!-- Bouton qui descend vers la section produits -->
+        <button id="scrollProductsBtn" class="btn-primary" type="button">Voir les produits</button>
+      </div>
+    </section>
+
+    <!-- Section produits -->
+    <section class="section" id="productsSection">
+      <div class="section-inner">
+
+        <!-- Titre et tri -->
+        <div class="section-head">
+          <h2>Produits</h2>
+
+          <!-- Liste de tri -->
+          <div class="filters">
+            <select id="sortSelect">
+              <option value="featured">Tri</option>
+              <option value="price_asc">Prix croissant</option>
+              <option value="price_desc">Prix décroissant</option>
+              <option value="name_asc">Nom A à Z</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Grille qui sera remplie en JavaScript -->
+        <div id="itemsGrid" class="grid"></div>
+
+        <!-- Message si aucun produit -->
+        <p id="emptyText" class="empty" hidden>Aucun produit</p>
+      </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+      <div class="footer-inner">
+
+        <!-- Marque et année -->
+        <div class="footer-left">
+          <div class="footer-brand">Betty</div>
+          <p class="footer-note">© 2026</p>
+        </div>
+
+        <!-- Liens réseaux sociaux -->
+        <div class="footer-social">
+          <a href="https://www.facebook.com/bettycrocker" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="images/facebook.png" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/bettycrocker/" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="images/instagram.png" alt="Instagram">
+          </a>
+          <a href="https://www.pinterest.com/bettycrocker/" target="_blank" rel="noopener" aria-label="Pinterest">
+            <img src="images/pinterest.png" alt="Pinterest">
+          </a>
+          <a href="https://www.youtube.com/user/BettyCrockerTV" target="_blank" rel="noopener" aria-label="YouTube">
+            <img src="images/youtube.png" alt="YouTube">
+          </a>
+          <a href="https://www.tiktok.com/@bettycrocker" target="_blank" rel="noopener" aria-label="TikTok">
+            <img src="images/tiktok.png" alt="TikTok">
+          </a>
+        </div>
+
+      </div>
+    </footer>
+  </main>
+
+  <!-- Fenêtre produit, pour voir un produit en détail -->
+  <div id="productModalBackdrop" class="modal-backdrop" aria-hidden="true">
+    <div class="modal">
+
+      <!-- Bouton fermer -->
+      <button id="closeModalBtn" class="modal-close" type="button" aria-label="Fermer">×</button>
+
+      <div class="modal-grid">
+
+        <!-- Images du produit -->
+        <div class="modal-media">
+          <img id="modalMainImage" class="modal-main" src="" alt="">
+          <div id="modalThumbs" class="thumbs"></div>
+        </div>
+
+        <!-- Infos du produit -->
+        <div class="modal-info">
+          <h3 id="modalTitle"></h3>
+          <div id="modalPrice" class="price"></div>
+          <p id="modalDesc" class="desc"></p>
+
+          <!-- Choix quantité -->
+          <div class="qty-row">
+            <span>Quantité</span>
+            <div class="qty">
+              <button id="qtyMinus" type="button">-</button>
+              <input id="qtyValue" type="number" min="1" value="1">
+              <button id="qtyPlus" type="button">+</button>
+            </div>
+          </div>
+
+          <!-- Ajout panier -->
+          <button id="modalAddToCart" class="btn-primary" type="button">Ajouter au panier</button>
+
+          <!-- Texte si stock vide -->
+          <p id="soldOutText" class="soldout" hidden>Rupture de stock</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Fond sombre quand le panier est ouvert -->
+  <div id="cartBackdrop" class="cart-backdrop" aria-hidden="true"></div>
+
+  <!-- Tiroir panier -->
+  <aside id="cartDrawer" class="cart" aria-hidden="true">
+
+    <!-- En-tête panier -->
+    <div class="cart-head">
+      <div class="cart-title">Votre panier</div>
+      <button id="closeCartBtn" class="cart-close" type="button" aria-label="Fermer">×</button>
+    </div>
+
+    <!-- Liste des produits ajoutés -->
+    <div id="cartList" class="cart-list"></div>
+
+    <!-- Résumé des prix -->
+    <div class="cart-summary">
+      <div class="row">
+        <span>Sous-total</span>
+        <span id="cartSubtotal">$0.00</span>
+      </div>
+
+      <div class="row">
+        <span>Taxe 13%</span>
+        <span id="cartTax">$0.00</span>
+      </div>
+
+      <div class="row total">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+
+      <!-- Boutons panier -->
+      <button id="checkoutBtn" class="btn-primary" type="button">Payer</button>
+      <button id="clearCartBtn" class="btn-ghost" type="button">Vider</button>
+    </div>
+  </aside>
+
+  <!-- Script boutique, produits, panier -->
+  <script src="scripts/boutique.js"></script>
+
+  <!-- Script menu -->
+  <script src="scripts/menu.js"></script>
+
+</body>
+</html>

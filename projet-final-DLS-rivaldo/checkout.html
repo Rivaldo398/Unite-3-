@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Titre de l’onglet -->
+  <title>Paiement</title>
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body> 
+
+  <!-- En-tête simple avec lien retour -->
+  <header class="pay-header">
+    <!-- Logo qui ramène à la boutique -->
+    <a class="pay-logo" href="boutique.html">Betty</a>
+  </header>
+
+  <!-- Contenu principal de la page -->
+  <main class="pay">
+
+    <!-- Colonne gauche, formulaire -->
+    <section class="pay-left">
+      <h1>Paiement</h1>
+
+      <!-- Bloc contact -->
+      <div class="block">
+        <h2>Contact</h2>
+        <label>Email</label>
+        <input id="email" type="email" placeholder="exemple@email.com">
+      </div>
+
+      <!-- Bloc adresse de livraison -->
+      <div class="block">
+        <h2>Adresse de livraison</h2>
+
+        <!-- Prénom et nom sur la même ligne -->
+        <div class="grid2">
+          <div>
+            <label>Prénom</label>
+            <input id="firstName" type="text">
+          </div>
+          <div>
+            <label>Nom</label>
+            <input id="lastName" type="text">
+          </div>
+        </div>
+
+        <!-- Adresse complète -->
+        <label>Adresse</label>
+        <input id="address" type="text">
+
+        <!-- Ville, province, code postal -->
+        <div class="grid3">
+          <div>
+            <label>Ville</label>
+            <input id="city" type="text">
+          </div>
+          <div>
+            <label>Province</label>
+            <input id="province" type="text">
+          </div>
+          <div>
+            <label>Code postal</label>
+            <input id="postal" type="text">
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloc paiement -->
+      <div class="block">
+        <h2>Paiement</h2>
+
+        <!-- Infos de carte -->
+        <label>Numéro de carte</label>
+        <input id="card" type="text" placeholder="0000 0000 0000 0000">
+
+        <!-- Date et CVC -->
+        <div class="grid2">
+          <div>
+            <label>Date</label>
+            <input id="exp" type="text" placeholder="MM/AA">
+          </div>
+          <div>
+            <label>CVC</label>
+            <input id="cvc" type="text" placeholder="000">
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions de bas de page -->
+      <div class="pay-actions">
+        <!-- Retour vers la boutique -->
+        <a class="back" href="boutique.html">Retour boutique</a>
+
+        <!-- Bouton payer, géré en JavaScript -->
+        <button id="payBtn" class="pay-btn" type="button">Payer</button>
+      </div>
+
+      <!-- Message affiché après le clic payer -->
+      <p id="payMsg" class="msg"></p>
+    </section>
+
+    <!-- Colonne droite, résumé du panier -->
+    <aside class="pay-right">
+      <div class="summary">
+
+        <!-- Titre résumé et total -->
+        <div class="summary-head">
+          <div>Résumé</div>
+          <div id="sumTotalTop">$0.00</div>
+        </div>
+
+        <!-- Liste des items du panier -->
+        <div id="sumList" class="sum-list"></div>
+
+        <!-- Sous-total, taxe, total -->
+        <div class="sum-row">
+          <span>Sous-total</span>
+          <span id="sumSubtotal">$0.00</span>
+        </div>
+
+        <div class="sum-row">
+          <span>Taxe 13%</span>
+          <span id="sumTax">$0.00</span>
+        </div>
+
+        <div class="sum-row total">
+          <span>Total</span>
+          <span id="sumTotal">$0.00</span>
+        </div>
+
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- Script qui gère le panier et le paiement -->
+  <script src="scripts/checkout.js"></script>
+</body>
+</html>

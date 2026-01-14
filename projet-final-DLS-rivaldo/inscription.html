@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inscription, Betty Crocker</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Icônes Google -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<body>
+
+<!-- En-tête du site -->
+<header>
+  <div class="barre-betty">
+    <div class="barre-haut">
+
+      <!-- Logo cliquable vers l’accueil -->
+      <a href="accueil.html">
+        <img src="images/logo.png" alt="logo" class="logo-betty">
+      </a>
+
+      <!-- Barre de recherche -->
+      <div class="recherche-betty">
+        <input type="text" placeholder="Rechercher une recette facile et délicieuse" />
+        <button class="btn-recherche" type="button">Rechercher</button>
+      </div>
+
+      <!-- Boutons inscription et connexion -->
+      <div class="actions-droite">
+        <a class="btn-simple" id="bouton-inscription" href="inscription.html">S’inscrire</a>
+        <a class="btn-simple" id="bouton-connexion" href="connexion.html">Connexion</a>
+      </div>
+    </div>
+
+    <!-- Menu principal -->
+    <nav class="menu-betty" id="menu-betty">
+
+      <!-- Catégorie recettes -->
+      <div class="menu-item">
+        <button class="menu-btn" type="button" aria-expanded="false">
+          Recettes <span class="fleche">▾</span>
+        </button>
+
+        <!-- Sous-menu recettes -->
+        <div class="mega-menu" aria-hidden="true">
+          <div class="mega-inner">
+            <div class="col">
+              <h4>Liens rapides</h4>
+              <a href="#">Recettes faciles</a>
+              <a href="#">Recettes préférées des enfants</a>
+              <a href="#">Parcourir toutes les recettes</a>
+            </div>
+
+            <div class="col">
+              <h4>Déjeuner et brunch</h4>
+              <a href="#">Recettes de muffins</a>
+              <a href="#">Recettes d’œufs au four</a>
+              <a href="#">Recettes de gâteaux au café</a>
+            </div>
+
+            <div class="col">
+              <h4>Desserts</h4>
+              <a href="#">Recettes de gâteaux</a>
+              <a href="#">Recettes de biscuits</a>
+              <a href="#">Recettes de brownies</a>
+            </div>
+
+            <div class="col">
+              <h4>Soupers</h4>
+              <a href="#">Recettes de poulet</a>
+              <a href="#">Recettes de bœuf</a>
+              <a href="#">Recettes de porc</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Autres catégories du menu -->
+      <div class="menu-item">
+        <button class="menu-btn" type="button" aria-expanded="false">
+          Fêtes et célébrations <span class="fleche">▾</span>
+        </button>
+
+        <div class="mega-menu" aria-hidden="true">
+          <div class="mega-inner">
+            <div class="col">
+              <h4>Occasions</h4>
+              <a href="#">Anniversaires</a>
+              <a href="#">Graduations</a>
+              <a href="#">Mariages</a>
+            </div>
+
+            <div class="col">
+              <h4>Fêtes</h4>
+              <a href="#">Noël</a>
+              <a href="#">Halloween</a>
+              <a href="#">Pâques</a>
+            </div>
+
+            <div class="col"></div>
+            <div class="col"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <button class="menu-btn" type="button" aria-expanded="false">
+          Comment faire <span class="fleche">▾</span>
+        </button>
+
+        <div class="mega-menu" aria-hidden="true">
+          <div class="mega-inner">
+            <div class="col">
+              <h4>Guides pratiques</h4>
+              <a href="#">Guide du glaçage</a>
+              <a href="#">Pâte à tarte</a>
+              <a href="#">Préparer des cupcakes</a>
+            </div>
+
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <button class="menu-btn" type="button" aria-expanded="false">
+          Produits <span class="fleche">▾</span>
+        </button>
+
+        <div class="mega-menu" aria-hidden="true">
+          <div class="mega-inner">
+            <div class="col">
+              <h4>Produits</h4>
+              <a href="#">Préparations à gâteau</a>
+              <a href="#">Mélanges à brownies</a>
+              <a href="#">Glaçages</a>
+            </div>
+
+            <div class="col">
+              <h4>Autres</h4>
+              <a href="#">Mélanges à muffins</a>
+              <a href="#">Mélanges Bisquick</a>
+              <a href="#">Décorations</a>
+            </div>
+
+            <div class="col">
+              <h4>Ingrédients</h4>
+              <a href="#">Farines</a>
+              <a href="#">Sucre</a>
+              <a href="#">Pépites</a>
+            </div>
+
+            <div class="col">
+              <h4>Catalogue</h4>
+              <a href="#">Voir tous les produits</a>
+              <a href="#">Promotions</a>
+              <a href="#">Nouveautés</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Liens simples -->
+      <a class="menu-lien" href="#">Idées créatives</a>
+      <a class="menu-lien" href="#">24 jours de biscuits</a>
+      <a class="menu-lien" href="boutique.html" target="_blank" rel="noopener">Boutique</a>
+
+    </nav>
+  </div>
+</header>
+
+<!-- Zone principale d’inscription -->
+<main class="zone-auth">
+  <section class="carte-auth">
+
+    <!-- Colonne gauche, information -->
+    <div class="auth-gauche">
+      <h1 class="auth-titre">Rejoignez la communauté Betty</h1>
+      <p class="auth-texte">
+        Créez un compte pour enregistrer vos recettes et recevoir des courriels.
+      </p>
+
+      <!-- Avantages du compte -->
+      <ul class="auth-liste">
+        <li>Boîte de recettes</li>
+        <li>Offres exclusives</li>
+        <li>Accès en avant première</li>
+      </ul>
+    </div>
+
+    <!-- Colonne droite, formulaire -->
+    <div class="auth-droite">
+      <h2 class="auth-titre-form">Inscription</h2>
+
+      <!-- Boutons inscription sociale -->
+      <div class="auth-social">
+        <button class="auth-social-btn" type="button">Facebook</button>
+        <button class="auth-social-btn" type="button">Google</button>
+      </div>
+
+      <!-- Séparateur visuel -->
+      <div class="auth-separateur"></div>
+
+      <!-- Formulaire d’inscription -->
+      <form id="formulaire-inscription" class="auth-form">
+
+        <!-- Courriel -->
+        <label for="champ-courriel-inscription">Adresse courriel</label>
+        <input id="champ-courriel-inscription" type="email" required />
+
+        <!-- Mot de passe -->
+        <label for="champ-motdepasse-inscription">Mot de passe</label>
+        <input id="champ-motdepasse-inscription" type="password" required />
+
+        <!-- Confirmation -->
+        <label for="champ-confirmation-inscription">Confirmer le mot de passe</label>
+        <input id="champ-confirmation-inscription" type="password" required />
+
+        <!-- Bouton créer compte -->
+        <button class="auth-bouton" type="submit">
+          Créer mon compte
+        </button>
+
+        <!-- Message erreur ou succès -->
+        <p id="message-inscription"></p>
+
+        <!-- Lien vers connexion -->
+        <p>
+          Déjà un compte
+          <a href="connexion.html">Se connecter</a>
+        </p>
+
+      </form>
+    </div>
+
+  </section>
+</main>
+
+<!-- Pied de page -->
+<footer class="footer-betty">
+
+  <!-- Logo et réseaux sociaux -->
+  <div class="footer-top">
+    <div class="footer-logo">
+      <img src="images/logo.png" alt="Betty" />
+    </div>
+
+    <div class="footer-social">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">Pinterest</a>
+      <a href="#">YouTube</a>
+      <a href="#">TikTok</a>
+    </div>
+  </div>
+
+  <!-- Liens de bas de page -->
+  <div class="footer-cols">
+    <div class="footer-col">
+      <h3>Explore Betty</h3>
+      <a href="#">Contact</a>
+      <a href="#">À propos</a>
+      <a href="#">Produits</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Politiques</h3>
+      <a href="#">Confidentialité</a>
+      <a href="#">Conditions</a>
+      <a href="#">Cookies</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Vos informations</h3>
+      <a href="#">Paramètres cookies</a>
+      <a href="#">Choix vie privée</a>
+      <a href="#">Publicité</a>
+    </div>
+
+    <div class="footer-right">
+      <p>©2026 General Mills</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script type="module" src="scripts/inscription.js"></script>
+<script src="scripts/menu.js"></script>
+
+</body>
+</html>
